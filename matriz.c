@@ -26,5 +26,15 @@ int main() {
         }
     }
 
+    // MOSTRAR NOTAS
+    printf("\n=== CALIFICACIONES ===\n");
+    for (i = 0; i < 5; i++) {
+        printf("Estudiante %d: ", i + 1);
+        for (j = 0; j < 3; j++) {
+            printf("%.2f ", notas[i][j]);
+        }
+        printf("\n");
+    }
+
     return 0;
 }
