@@ -26,5 +26,40 @@ int main() {
         }
     }
 
+    // MOSTRAR NOTAS
+    printf("\n=== CALIFICACIONES ===\n");
+    for (i = 0; i < 5; i++) {
+        printf("Estudiante %d: ", i + 1);
+        for (j = 0; j < 3; j++) {
+            printf("%.2f ", notas[i][j]);
+        }
+        printf("\n");
+    }
+
+    // RESULTADOS POR ESTUDIANTE
+    printf("\n=== POR ESTUDIANTE ===\n");
+    for (i = 0; i < 5; i++) {
+        suma = 0;
+        mayor = notas[i][0];
+        menor = notas[i][0];
+
+        for (j = 0; j < 3; j++) {
+            suma += notas[i][j];
+
+            if (notas[i][j] > mayor) {
+                mayor = notas[i][j];
+            }
+
+            if (notas[i][j] < menor) {
+                menor = notas[i][j];
+            }
+        }
+
+        promedio = suma / 3;
+
+        printf("Estudiante %d -> Promedio: %.2f | Mayor: %.2f | Menor: %.2f\n",
+               i + 1, promedio, mayor, menor);
+    }
+
     return 0;
 }
