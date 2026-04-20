@@ -61,5 +61,37 @@ int main() {
                i + 1, promedio, mayor, menor);
     }
 
+    // RESULTADOS POR ASIGNATURA
+    printf("\n=== POR ASIGNATURA ===\n");
+    for (j = 0; j < 3; j++) {
+        suma = 0;
+        mayor = notas[0][j];
+        menor = notas[0][j];
+        aprobados = 0;
+        reprobados = 0;
+
+        for (i = 0; i < 5; i++) {
+            suma += notas[i][j];
+
+            if (notas[i][j] > mayor) {
+                mayor = notas[i][j];
+            }
+
+            if (notas[i][j] < menor) {
+                menor = notas[i][j];
+            }
+
+            if (notas[i][j] >= 6) {
+                aprobados++;
+            } else {
+                reprobados++;
+            }
+        }
+
+        promedio = suma / 5;
+
+        printf("Asignatura %d -> Promedio: %.2f | Mayor: %.2f | Menor: %.2f | Aprobados: %d | Reprobados: %d\n",
+               j + 1, promedio, mayor, menor, aprobados, reprobados);
+    }
     return 0;
 }
